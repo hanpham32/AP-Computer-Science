@@ -1,16 +1,22 @@
 public class AddressBook {
 	private String name;
-	private String address;
+	private String address = "";
+	private String city = "";
+	private String state = "";
+	private String zipcode = "";
 	private Birthday birthday;
 	private static int contacts = 0;
 	
 	public AddressBook(String n) {
-		this(n, "");
+		this.name = n;
 	}
-	public AddressBook(String n, String a) {
+	public AddressBook(String n, String a, String c, String s, String z) {
 		this.name = n;
 		this.address = a;
-		this.contacts++;
+		this.city = c;
+		this.state = s;
+		this.zipcode = z;
+		contacts++;
 	}
 	public AddressBook(String n, Birthday d) {
 		this.name = n;
@@ -23,7 +29,7 @@ public class AddressBook {
 		return name;
 	}
 	public String getAddress() {
-		return address;
+		return address + " " + city + " " + state + " " + zipcode;
 	}
 	
 	// MUTATOR
@@ -33,11 +39,20 @@ public class AddressBook {
 	public void setAddress(String a) {
 		this.address = a;
 	}
+	public void setCity(String c) {
+		this.city = c;
+	}
+	public void setState(String s) {
+		this.state = s;
+	}
+	public void setZipcode(String z) {
+		this.zipcode = z;
+	}
 	public void setBirthday(Birthday d) {
 		birthday = d;
 	}
 	
 	public String toString() {
-		return String.format("name: %s || address: %s || birhtday: %s || record: %d", name, address, birthday, contacts);
+		return String.format("name: %s || address: %s %s %s %s || birhtday: %s || record: %d", name, address, city, state, zipcode, birthday, contacts);
 	}
 }
