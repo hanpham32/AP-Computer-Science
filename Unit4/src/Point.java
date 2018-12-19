@@ -23,16 +23,14 @@ public class Point {
 		return "("+x+","+y+")";
 	}
 	
-	public String findPolarCoordinates(Point one, Point two) {
+	public String findPolarCoordinates(Point one) {
 		DecimalFormat df = new DecimalFormat("#.##");
 		int x1 = one.getX();
-		int x2 = two.getX();
 		int y1 = one.getY();
-		int y2 = two.getY();
-		double distance = Math.sqrt(Math.pow(2,x2-x1) + Math.pow(2, y2-y1));
+		double distanceFromOrigin = Math.sqrt(x*x + y*y);
 		
-		double angle = Math.toDegrees(Math.atan((y2-y1)/(x2-x1)));
-		return "("+df.format(distance)+","+angle+"°)";
+		double angle = Math.atan(y/x);
+		return "("+df.format(distanceFromOrigin)+","+df.format(angle)+"°)";
 	}
 	
 	public double distanceTo(Point one, Point two) {
@@ -44,13 +42,18 @@ public class Point {
 	}
 	
 	public String slopeTo(Point one, Point two) {
+		int GCD = 0;
 		int x1 = one.getX();
 		int x2 = two.getX();
 		int y1 = one.getY();
 		int y2 = two.getY();
 		int changeInY = y2 - y1;
 		int changeInX = x2 - x1;
-		
-		return changeInY+"/"+changeInX;
+		for (int i=1; i<(Math.abs(changeInX) > Math.abs(changeInY) ? changeInY : changeInX) ; i++) {
+			if (Math.abs(changeInX)%i == 0 && Math.abs(changeInY)%i == 0) {
+				GCD = i;
+			}
+		}
+		return changeInY/GCD+"/"+changeInX/GCD;
 	}
 }

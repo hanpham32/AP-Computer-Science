@@ -6,8 +6,7 @@ public class Main {
 		Point point1 = new Point(in.nextInt(),in.nextInt());
 		Point point2 = new Point(in.nextInt(),in.nextInt());
 
-		System.out.println(point1.findPolarCoordinates(point1, point2));
-//		System.out.println(point1.slopeTo(point1, point2));
+		System.out.println(point1.slopeTo(point1, point2));
 		System.out.println("Point 1: "+ point1.getPoint());
 		System.out.println("Point 2: "+ point2.getPoint());
 	}
