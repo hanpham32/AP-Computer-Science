@@ -33,12 +33,13 @@ public class Point {
 		return "("+df.format(distanceFromOrigin)+","+df.format(angle)+"°)";
 	}
 	
-	public double distanceTo(Point one, Point two) {
+	public String distanceTo(Point one, Point two) {
+		DecimalFormat df = new DecimalFormat("#.##");
 		int x1 = one.getX();
 		int x2 = two.getX();
 		int y1 = one.getY();
 		int y2 = two.getY();
-		return Math.sqrt(Math.pow(2,x2-x1) + Math.pow(2, y2-y1));
+		return df.format(Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1)));
 	}
 	
 	public String slopeTo(Point one, Point two) {
@@ -54,6 +55,39 @@ public class Point {
 				GCD = i;
 			}
 		}
-		return changeInY/GCD+"/"+changeInX/GCD;
+		if (changeInY==changeInX) {
+			return "1";
+		} else {
+			return changeInY/GCD+"/"+changeInX/GCD;
+		}
+	}
+	
+	public String midPoint(Point one, Point two) {
+		DecimalFormat df = new DecimalFormat("#.##");
+		int x1 = one.getX();
+		int x2 = two.getX();
+		int y1 = one.getY();
+		int y2 = two.getY();
+		return df.format(Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1))/2);
+	}
+	
+	public String quadrant(Point point) {
+		x = point.x;
+		y= point.y;
+		if (x > 0 && y > 0) {
+			return "I Quadrant";
+		} else if (x < 0 && y > 0) {
+			return "II Quadrant";
+		} else if (x < 0 && y < 0) {
+			return "III Quadrant";
+		} else if (x > 0 && y < 0) {
+			return "IV Quadrant";
+		} else {
+			return "Origin";
+		}
+	}
+	
+	public String toString() {
+		return "("+x+"/"+y+")";
 	}
 }
