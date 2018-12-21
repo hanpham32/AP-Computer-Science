@@ -11,13 +11,24 @@ public class Course {
 	}
 	public Course(String courseName, String instructorName) {
 		setCourseName(courseName);
+		setInstructorName(instructorName);
 	}
 	
+	// MUTATORS
 	public void setCourseName(String s) {
 		courseName = s;
 	}
 	public void setInstructorName(String s) {
 		instructor = s;
+	}
+	public void setRoom(int x) {
+		room = x;
+	}
+	public void setPeriod(int x) {
+		period = x;
+	}
+	public void addStudent(String[] s) {
+		
 	}
 	
 	public String toString() {
