@@ -1,17 +1,22 @@
+import java.util.Arrays;
 
 public class Course {
+	public static int totalCourses = 0;
 	private String courseName = "";
 	private String instructor = "";
 	private int room = 0;
 	private int period = 0;
-	private String[] students;
+	private int sPresent = 1;
+	private String[] students = {"Hannah", " ", " "};
 	
 	public Course(String courseName) {
 		setCourseName(courseName);
+		totalCourses++;
 	}
 	public Course(String courseName, String instructorName) {
 		setCourseName(courseName);
 		setInstructorName(instructorName);
+		totalCourses++;
 	}
 	
 	// MUTATORS
@@ -27,8 +32,22 @@ public class Course {
 	public void setPeriod(int x) {
 		period = x;
 	}
-	public void addStudent(String[] s) {
-		
+	public void addStudent(String s) {
+		students[sPresent] = s;
+		sPresent++;
+	}
+	
+	// ACCESSOR
+	public String getStudents() {
+		return Arrays.toString(students);
+	}
+	public boolean isEnrolled(String s) {
+		for (int i = 0; i<students.length; i++) {
+			if (students[i].equals(s)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public String toString() {
