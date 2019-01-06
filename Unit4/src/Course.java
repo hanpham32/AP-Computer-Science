@@ -6,8 +6,9 @@ public class Course {
 	private String instructor = "";
 	private int room = 0;
 	private int period = 0;
-	private int sPresent = 1;
-	private String[] students = {"Hannah", " ", " "};
+	private int sPresent = 0;
+	final int MAX_CLASS_SIZE = 5;
+	private String[] students = new String[5];
 	
 	public Course(String courseName) {
 		setCourseName(courseName);
@@ -33,13 +34,23 @@ public class Course {
 		period = x;
 	}
 	public void addStudent(String s) {
-		students[sPresent] = s;
+		if ((sPresent+1) == MAX_CLASS_SIZE) { // Check if the class is full
+			System.out.println("CLASS IS FULL!! CANNNOT ADD " + s);
+		} else { // If not, then the student can enroll in class
+			students[sPresent] = s;
 		sPresent++;
+		}
 	}
 	
 	// ACCESSOR
 	public String getStudents() {
-		return Arrays.toString(students);
+		String temp = "";
+		for (int i=0; i<students.length; i++) {
+			if (students[i] != null) {
+				temp += students[i]+" ";
+			}
+		}
+		return temp;
 	}
 	public boolean isEnrolled(String s) {
 		for (int i = 0; i<students.length; i++) {
@@ -48,6 +59,13 @@ public class Course {
 			}
 		}
 		return false;
+	}
+	public boolean isClassFull() {
+		if ((sPresent+1) == MAX_CLASS_SIZE) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public String toString() {
