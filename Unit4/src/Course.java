@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Course {
 	public static int totalCourses = 0;
 	private String courseName = "";
