@@ -7,8 +7,11 @@ public class AddressBook {
 	private Birthday birthday;
 	private static int contacts = 0;
 	
-	public AddressBook(String n) {
-		this.name = n;
+	public AddressBook() {
+		
+	}
+	public AddressBook(String name) {
+		this.name = name;
 	}
 	public AddressBook(String n, String a, String c, String s, String z) {
 		this.name = n;
@@ -16,6 +19,14 @@ public class AddressBook {
 		this.city = c;
 		this.state = s;
 		this.zipcode = z;
+		contacts++;
+	}
+	public AddressBook(String n, String a, String c, String s, Birthday d) {
+		this.name = n;
+		this.address = a;
+		this.city = c;
+		this.state = s;
+		this.birthday = d;
 		contacts++;
 	}
 	public AddressBook(String n, Birthday d) {
