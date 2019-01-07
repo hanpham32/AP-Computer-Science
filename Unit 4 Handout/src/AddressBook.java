@@ -64,6 +64,6 @@ public class AddressBook {
 	}
 	
 	public String toString() {
-		return String.format("name: %s || address: %s %s %s %s || birhtday: %s || record: %d", name, address, city, state, zipcode, birthday, contacts);
+		return String.format("name: %s || address: %s %s %s %s || birhtday: %s", name, address, city, state, zipcode, birthday);
 	}
 }

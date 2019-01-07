@@ -3,10 +3,10 @@ public class Birthday {
 	private int month;
 	private int year;
 	
-	public Birthday(int m, int d, int y) {
-		this.day = d;
-		this.month = m;
-		this.year = y;
+	public Birthday(String m, String d, String y) {
+		this.day = Integer.parseInt(d);
+		this.month = Integer.parseInt(m);
+		this.year = Integer.parseInt(y);
 	}
 	
 	public String toString() {
