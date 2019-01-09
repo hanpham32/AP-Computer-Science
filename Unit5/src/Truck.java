@@ -16,5 +16,7 @@ public class Truck extends Vehicle{
 	public void closeTailgate() {
 		System.out.println("Closing Tailgate");
 	}
-	
+	public void increaseSpeed() {
+		
+	}
 }
