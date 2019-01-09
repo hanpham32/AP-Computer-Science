@@ -4,7 +4,8 @@ public class Car extends Vehicle{
 	
 	// Constructor
 	public Car() {
-		
+		setLicensePlate("C" + oddNum);
+		oddNum += 2;
 	}
 	
 	// Behaviors

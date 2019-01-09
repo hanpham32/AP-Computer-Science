@@ -4,9 +4,9 @@ public class Vehicle {
 	private String licensePlate = "";
 	
 	// Constructor
-	public Vehicle() {
-		
-	}
+//	public Vehicle(String s) {
+//		setLicensePlate(s);
+//	}
 	
 	// Behaviors
 	public void stop() {
@@ -23,6 +23,9 @@ public class Vehicle {
 	}
 	public void decreaseSpeed(int x) {
 		this.speed -= x;
+	}
+	public void setLicensePlate(String s) {
+		this.licensePlate = s;
 	}
 	
 	// ACCESSOR METHODS

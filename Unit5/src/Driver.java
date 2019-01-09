@@ -1,39 +1,22 @@
 
 public class Driver {
 	public static void main(String[] args) {
-		Vehicle vehicle = new Vehicle();
-		Car car = new Car();
-		Truck truck = new Truck();
-		Vehicle a = new Car();
-		Vehicle b = new Truck();
-//		Car c = new Vehicle();
-//		Truck d = new Car();
-//		Car c = new Truck();
-		Vehicle d = new Car();
+		Car a = new Car();
+		System.out.println(a.getLicensePlate());
 		
-		vehicle.increaseSpeed(35);
-		System.out.println("vehicle's current speed: " + vehicle.getSpeed());
-
+		Car b = new Car();
+		System.out.println(b.getLicensePlate());
 		
-		car.increaseSpeed(35);
-		System.out.println("car's current speed: " + car.getSpeed());
+		Car c = new Car();
+		System.out.println(c.getLicensePlate());
 		
-		truck.increaseSpeed(35);
-		System.out.println("truck's current speed: " + truck.getSpeed());
+		Truck d = new Truck();
+		System.out.println(d.getLicensePlate());
 		
-		a.increaseSpeed(35);
-		System.out.println("a's current speed: " + a.getSpeed());
+		Truck e = new Truck();
+		System.out.println(e.getLicensePlate());
 		
-		b.increaseSpeed(35);
-		System.out.println("b's current speed: " + b.getSpeed());
-		
-		((Car) d).openTrunk();
-//		c.closeTailgate();
+		Truck f = new Truck();
+		System.out.println(f.getLicensePlate());
 	}
-	
 }
-
-/* 
-4. Objects c and d examples above don't work because we cannot cast Superclass to Subclass
-only Subclass to Superclass. 
-*/
