@@ -1,12 +1,14 @@
 public class Truck extends Vehicle{
+	// Fields
 	public static int evenNum = 2;
 	
 	// Constructor
 	public Truck() {
-		setLicensePlate("T" + evenNum);
+		super("T" + evenNum);
 		evenNum += 2;
 	}
 	
+	// Behaviors
 	public void openTailgate() {
 		System.out.println("Openning Tailgate");
 	}
@@ -14,4 +16,5 @@ public class Truck extends Vehicle{
 	public void closeTailgate() {
 		System.out.println("Closing Tailgate");
 	}
+	
 }

@@ -18,5 +18,8 @@ public class Driver {
 		
 		Truck f = new Truck();
 		System.out.println(f.getLicensePlate());
+		
+		Vehicle g = new Vehicle("123");
+		System.out.println(g.getLicensePlate());
 	}
 }

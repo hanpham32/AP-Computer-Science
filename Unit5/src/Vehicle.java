@@ -3,10 +3,10 @@ public class Vehicle {
 	private int speed = 0;
 	private String licensePlate = "";
 	
-	// Constructor
-//	public Vehicle(String s) {
-//		setLicensePlate(s);
-//	}
+	// CONSTRUCTOR
+	public Vehicle(String s) {
+		setLicensePlate(s);
+	}
 	
 	// Behaviors
 	public void stop() {
