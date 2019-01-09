@@ -8,9 +8,12 @@ public class Driver {
 		Vehicle b = new Truck();
 //		Car c = new Vehicle();
 //		Truck d = new Car();
+//		Car c = new Truck();
+		Vehicle d = new Car();
 		
 		vehicle.increaseSpeed(35);
 		System.out.println("vehicle's current speed: " + vehicle.getSpeed());
+
 		
 		car.increaseSpeed(35);
 		System.out.println("car's current speed: " + car.getSpeed());
@@ -23,7 +26,11 @@ public class Driver {
 		
 		b.increaseSpeed(35);
 		System.out.println("b's current speed: " + b.getSpeed());
+		
+		((Car) d).openTrunk();
+//		c.closeTailgate();
 	}
+	
 }
 
 /* 

@@ -1,7 +1,14 @@
 public class Vehicle {
 	// FIELDS
 	private int speed = 0;
+	private String licensePlate = "";
 	
+	// Constructor
+	public Vehicle() {
+		
+	}
+	
+	// Behaviors
 	public void stop() {
 		System.out.println("Stopping");
 	}
@@ -21,5 +28,8 @@ public class Vehicle {
 	// ACCESSOR METHODS
 	public int getSpeed() {
 		return speed;
+	}
+	public String getLicensePlate() {
+		return licensePlate;
 	}
 }

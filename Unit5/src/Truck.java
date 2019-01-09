@@ -1,4 +1,4 @@
-public class Truck extends Car{
+public class Truck extends Vehicle{
 	public void openTailgate() {
 		System.out.println("Openning Tailgate");
 	}
