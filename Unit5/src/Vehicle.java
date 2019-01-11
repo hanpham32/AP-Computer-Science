@@ -18,6 +18,9 @@ public class Vehicle {
 	}
 	
 	// MUTATOR METHODS
+	public void setSpeed(int x) {
+		this.speed = x;
+	}
 	public void increaseSpeed(int x) {
 		this.speed += x;
 	}
