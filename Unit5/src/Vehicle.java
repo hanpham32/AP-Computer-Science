@@ -1,4 +1,4 @@
-public class Vehicle {
+public abstract class Vehicle {
 	// FIELDS
 	private int speed = 0;
 	private String licensePlate = "";
@@ -38,4 +38,7 @@ public class Vehicle {
 	public String getLicensePlate() {
 		return licensePlate;
 	}
+	abstract public int getMaxSpeed();
+	abstract public int getGasMileage();
+	abstract public int getWeight();
 }
