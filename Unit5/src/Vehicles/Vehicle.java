@@ -1,3 +1,4 @@
+package Vehicles;
 public abstract class Vehicle {
 	// FIELDS
 	private int speed = 0;

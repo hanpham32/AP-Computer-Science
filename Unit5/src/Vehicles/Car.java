@@ -1,9 +1,9 @@
-
+package Vehicles;
 public class Car extends Vehicle{
 	public static int oddNum = 1;
-	public final int MAX_SPEED = 60;
-	public final int WEIGHT = 4000;
-	public final int gasMILEAGE = 40;
+	private final int MAX_SPEED = 60;
+	private final int WEIGHT = 4000;
+	private final int gasMILEAGE = 40;
 	
 	// Constructor
 	public Car() {
