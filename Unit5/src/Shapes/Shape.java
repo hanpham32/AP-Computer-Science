@@ -1,4 +1,5 @@
+package Shapes;
 public interface Shape {
 	public double getArea();
-	public double getParameter();
+	public double getPerimeter();
 }
