@@ -1,4 +1,5 @@
 package Shapes;
+
 public class Triangle implements Shape {
 	private double a;
 	private double b;
