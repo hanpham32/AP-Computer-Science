@@ -42,4 +42,8 @@ public class Employee {
 		this.birthYear = x;
 	}
 	
+	public String toString() {
+		return String.format("ID: %s, First Name: %s, Last Name: %s, Birthday: %s/%s/%s, Skill: %s, Project: %s", ID, firstName, lastName, birthMonth, birthDay, birthYear, skills, projects);
+	}
+	
 }
