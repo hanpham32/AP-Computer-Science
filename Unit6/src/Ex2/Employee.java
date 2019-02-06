@@ -46,4 +46,26 @@ public class Employee {
 		return String.format("ID: %s, First Name: %s, Last Name: %s, Birthday: %s/%s/%s, Skill: %s, Project: %s", ID, firstName, lastName, birthMonth, birthDay, birthYear, skills, projects);
 	}
 	
+	public ArrayList<String> getSkills() {
+		return skills;
+	}
+	
+	public ArrayList<String> getProducts(){
+		return projects;
+	}
+	
+	public String checkSkills(ArrayList a, String s) {
+		for(int i=0; i < a.size(); i++) {
+			if () {
+				
+			}
+		}
+		return "";
+		
+	}
+	
+	public String checkProduct(String product) {
+		return "";
+	}
+	
 }

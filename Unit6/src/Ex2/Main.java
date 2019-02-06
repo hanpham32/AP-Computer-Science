@@ -43,7 +43,7 @@ public class Main {
 					em.projects.add(i);
 				}				
 			}
-			System.out.println(employees.get(0));
+			System.out.println(employees.get(1));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
