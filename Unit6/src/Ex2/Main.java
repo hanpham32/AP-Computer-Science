@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] arsg) {
-		File f = new File("C:\\Users\\s-phamh\\Documents\\GitHub\\AP_Comp_Sci_Unit_Exercises\\Unit6\\src\\Ex2\\employee.txt");
+		File f = new File("C:\\Users\\yunir\\eclipse-workspace\\AP_Comp_Sci_Unit_Exercises\\Unit6\\src\\Ex2\\employee.txt");
 		try {
 			Scanner in = new Scanner(f);
 			
@@ -17,6 +17,7 @@ public class Main {
 				Employee em = new Employee();
 				employees.add(em);
 				
+				// Break down each line
 				String line = in.nextLine();
 				String[] s = line.split(";");
 				int ID = Integer.parseInt(s[0]);
@@ -30,7 +31,8 @@ public class Main {
 				String[] Skills = s[3].split(",");
 				String[] Projects = s[4].split(",");
 				
-				em.ID = ID;
+				// Add values
+				em.setID(ID);
 				em.setFirstName(firstName);
 				em.setLastName(lastName);
 				em.setBirthDay(day);
@@ -43,10 +45,39 @@ public class Main {
 					em.projects.add(i);
 				}				
 			}
-			System.out.println(employees.get(1));
+			
+			System.out.println(employees.get(0));
+			System.out.println();
+			System.out.println("People who has Support skill:");
+			commonSkills(employees, "Support");
+			System.out.println();
+			System.out.println("People who works on ProjectZ:");
+			commonProjects(employees, "ProjectZ");
+			
+			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+	
+	public static void commonSkills(ArrayList<Employee> a, String s) {
+		for (Employee x : a) {
+			for (String skill : x.getSkills()) {
+				if (skill.equals(s)) {
+					System.out.println(x.getFirstName() + " " + x.getLastName());
+				}
+			}
+		}		
+	}
+	
+	public static void commonProjects(ArrayList<Employee> a, String s) {
+		for (Employee x : a) {
+			for (String project : x.getProjects()) {
+				if (project.equals(s)) {
+					System.out.println(x.getFirstName() + " " + x.getLastName());
+				}
+			}
 		}
 	}
 }
