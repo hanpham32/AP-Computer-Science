@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] arsg) {
-		File f = new File("C:\\Users\\yunir\\eclipse-workspace\\AP_Comp_Sci_Unit_Exercises\\Unit6\\src\\Ex2\\employee.txt");
+		File f = new File("C:\\Users\\s-phamh\\Documents\\GitHub\\AP_Comp_Sci_Unit_Exercises\\Unit6\\src\\Ex2\\employee.txt");
 		try {
 			Scanner in = new Scanner(f);
 			
