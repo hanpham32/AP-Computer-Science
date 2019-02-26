@@ -5,30 +5,37 @@ import java.util.Scanner;
 
 public class Ex3 {
 	public static void main(String[] args) throws FileNotFoundException {
-		File f = new File("C:\\Users\\s-phamh\\Documents\\GitHub\\AP_Comp_Sci_Unit_Exercises\\Unit7\\src\\numbers.txt");
-		Scanner scan = new Scanner(f);
+		File numbers = new File("C:\\Users\\s-phamh\\Documents\\GitHub\\AP_Comp_Sci_Unit_Exercises\\Unit7\\src\\numbers.txt");
+		Scanner scan1 = new Scanner(numbers);
 		ArrayList<Integer> list = new ArrayList();
-		while (scan.hasNextLine()) {
-			list.add(Integer.parseInt(scan.nextLine()));
+		while (scan1.hasNextLine()) {
+			list.add(Integer.parseInt(scan1.nextLine()));
 		}
-		int smallest_index = 0;
-		int j = 1;
-		for (int i=0; i<list.size(); i++) {
-			if (list.get(smallest_index) > list.get(j)) {
-				swap(list, smallest_index,j);
-			} else {
-				j++;
-			}
+		for (int x : list) {
+			System.out.print(x + " ");
 		}
+		System.out.println();
 		
+		
+		for (int i=0; i<list.size(); i++) {
+			int smallest = list.get(i);
+			int big_pos = 0;
+			for (int j=0; j<list.size(); j++) {
+				if (smallest > list.get(j)) {
+					smallest = list.get(j);
+				}
+				big_pos = j;
+			}
+			swap(list, smallest, list.get(i), i, big_pos);
+		}
 		for (int x : list) {
 			System.out.print(x + " ");
 		}
 	}
 	
-	public static void swap(ArrayList<Integer> l, int smallest, int i) {
-		int temp = smallest;
-		l.set(smallest, i);
-		l.set(i, temp);
+	public static void swap(ArrayList<Integer> l, int smallest, int big, int cur_pos, int big_pos) {
+		int temp_s = smallest;
+		l.set(cur_pos, temp_s);
+		l.set(big_pos, big);
 	}
 }
