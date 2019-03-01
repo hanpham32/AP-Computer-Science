@@ -12,10 +12,19 @@ public class Ex3 {
 			list.add(scan.nextLine());
 		}
 		
+		Scanner user = new Scanner(System.in);
+		if (user.nextLine().equals("Accending")) {
+			Accending(list);
+		} else if (user.nextLine().equals("Decending")) {
+			Decending(list);
+		}
+		
 		for (String x : list) {
 			System.out.println(x);
 		}
-		
+	}
+	
+	public static void Decending(ArrayList<String> list) {
 		for (int i=1; i<list.size(); i++) {
 			for (int j=i; j>0 && list.get(j).compareTo(list.get(j-1)) >= 0; j--) {
 				String temp = list.get(j);
@@ -26,17 +35,19 @@ public class Ex3 {
 				System.out.print(x+" ");
 			} System.out.println();
 		}
+	}
+	
+	public static void Accending(ArrayList<String> list) {
+		for (int i=1; i<list.size();i++) {
+			for (int j=i; j>0 && list.get(j).compareTo(list.get(j-1)) <= 0; j--) {
+				String temp = list.get(j);
+				list.set(j, list.get(j-1));
+				list.set(j-1, temp);
+			}
+		}
 		
-//		for (int i=1; i<list.size();i++) {
-//			for (int j=i; j>0 && list.get(j).compareTo(list.get(j-1)) <= 0; j--) {
-//				String temp = list.get(j);
-//				list.set(j, list.get(j-1));
-//				list.set(j-1, temp);
-//			}
-//		}
-//		
-//		for (String x : list) {
-//			System.out.print(x+" ");
-//		}		
+		for (String x : list) {
+			System.out.print(x+" ");
+		}	
 	}
 }
