@@ -1,7 +1,8 @@
 
 public class Ex1 {
 	public static void main(String[] args) {
-		System.out.println(reverse("Mr.Srock"));
+		System.out.println(reverse("abc"));
+		System.out.print(reverse("123"));
 //		String a = "hello";
 //		System.out.println(a.substring(0,4));
 	}
