@@ -1,14 +1,14 @@
 
 public class Ex3 {
 	public static void main(String[] args) {
-		System.out.println(Fibo(3));
+		System.out.println(Fibo(0));
 	}
 	
 	public static int Fibo(int n) {
 		if (n <= 0) {
-			return 0;
+			return 1;
 		} else {
-			return n + Fibo(n-1);
+			return Fibo(n-1) + Fibo(n-2);
 		}
 	}
 }
