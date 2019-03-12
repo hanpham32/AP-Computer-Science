@@ -1,9 +1,10 @@
+package Recursion;
 
 public class Ex5 {
 	public static void main(String[] args) {
 		int[] array = {4,7,9,11,12,16,20,32,34};
 		
-		int index = binarySearch(array, 9, 0, array.length-1);
+		int index = binarySearch(array, 16, 0, array.length-1);
 		System.out.println(index);
 	}
 	
